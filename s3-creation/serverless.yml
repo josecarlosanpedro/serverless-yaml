@@ -1,0 +1,19 @@
+service: sample-s3
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: ${opt:stage}
+  region: us-east-1
+
+resources:
+  Resources:
+    MediaBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: 'sample-s3-${opt:stage}'
+        AccessControl: Private
+        CorsConfiguration:
+          CorsRules:
+            - AllowedHeaders: ['*']
+              AllowedMethods: ['POST', 'GET', 'PUT']
+              AllowedOrigins: ['*']
