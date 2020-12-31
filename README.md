@@ -1,2 +1,2 @@
-<!-- //merry christmas -->
+<!-- //happy new year -->
 # serverless-yaml
